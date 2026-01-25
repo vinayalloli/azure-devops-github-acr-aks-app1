@@ -25,6 +25,7 @@ stages:
             Dockerfile: '**/Dockerfile'
             tags: |
               $(tag)
+              $(Build.SourceBranch)
               
             
 # Publish Artifacts pipeline code in addition to Build and Push             
