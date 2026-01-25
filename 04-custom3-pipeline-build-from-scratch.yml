@@ -6,7 +6,7 @@
 trigger:
 - master
 variables:
-  tag: $(Build.BuildId)
+  tag: '$(Build.SourceBranchName)-$(Build.BuildId)'
 
 stages:
 - stage: Build
@@ -25,7 +25,7 @@ stages:
             Dockerfile: '**/Dockerfile'
             tags: |
               $(tag)
-              $(Build.SourceBranch)
+              
               
             
 # Publish Artifacts pipeline code in addition to Build and Push             
