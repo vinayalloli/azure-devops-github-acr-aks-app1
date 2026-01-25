@@ -39,7 +39,9 @@ stages:
         tags: |
           $(tag)
 ## Publish Artifacts pipeline code in addition to Build and Push          
-    - bash: echo Contents in System Default Working Directory; ls -R $(System.DefaultWorkingDirectory)        
+    - bash: echo Content in the system Default Working Directory  Before Copying. 
+    - bash: echo Contents in System Default Working Directory; ls -R $(System.DefaultWorkingDirectory)
+    - bash: echo Content in the Build Artifact Director  Before Copying .        
     - bash: echo Before copying Contents in Build Artifact Directory; ls -R $(Build.ArtifactStagingDirectory)        
     # Task-2: Copy files (Copy files from a source folder to target folder)
     # Source Directory: $(System.DefaultWorkingDirectory)/kube-manifests
